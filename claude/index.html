@@ -185,6 +185,16 @@ footer{margin:34px 0 44px}
   .team{grid-template-columns:1fr}
   .sec{flex-direction:column;align-items:start}
 }
+
+/* forum materials */
+.forum{display:flex;align-items:center;gap:22px;margin:0 0 16px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:18px;box-shadow:var(--shadow)}
+.forum .qr{flex:none;width:150px;height:150px;background:#fff;border-radius:14px;padding:8px;border:1px solid var(--line)}
+.forum .qr img{width:100%;height:100%;display:block;image-rendering:pixelated}
+.forum h2{color:var(--ink);font:700 clamp(20px,3vw,26px)/1.15 Unbounded,Inter,sans-serif;margin:0 0 6px}
+.forum p{margin:0 0 12px;color:var(--muted);font-size:14.5px}
+.forum a.btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);text-decoration:none;font:700 14.5px Inter,sans-serif;padding:11px 16px;border-radius:12px;min-height:46px}
+.forum a.btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+@media (max-width:560px){.forum{flex-direction:column;text-align:center}.forum .qr{width:180px;height:180px}}
 </style>
 </head>
 <body>
@@ -224,6 +234,7 @@ footer{margin:34px 0 44px}
   <details class="bonus" id="bonus"></details>
 
   <footer>
+    <section class="forum" aria-labelledby="forumTitle"><div class="qr"><img src="../assets/qr-materialy-foruma.png" alt="QR-код: Материалы форума" width="150" height="150"></div><div><h2 id="forumTitle" data-t="forumTitle">Материалы форума</h2><p data-t="forumText">Отсканируйте QR-код или нажмите кнопку, чтобы открыть папку с материалами.</p><a class="btn" href="https://drive.google.com/drive/folders/1X_bZAd-pgAKLCd5cETX8Axdwv9ubsPRH?usp=sharing" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 7.5A2 2 0 0 1 5.5 5.5h4l2 2.5h7a2 2 0 0 1 2 2v7.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><span data-t="forumBtn">Открыть папку</span></a></div></section>
     <div class="warn" id="warn"></div>
     <div class="foot" data-t="foot"></div>
   </footer>
@@ -265,6 +276,7 @@ const svg = (k, extra="") => '<svg class="i" viewBox="0 0 24 24" aria-hidden="tr
 
 const UI = {
   ru:{
+    forumTitle:"Материалы форума", forumText:"Отсканируйте QR-код или нажмите кнопку, чтобы открыть папку с материалами.", forumBtn:"Открыть папку",
     org:"Цифровой офис",
     kicker:"Практикум для предпринимателей",
     title:"Ты — CEO.<br><em>Claude</em> — твоя команда",
@@ -281,6 +293,7 @@ const UI = {
     foot:"Все компании и данные в учебных файлах вымышлены. © 2026 Amanzholov University · Цифровой офис"
   },
   kz:{
+    forumTitle:"Форум материалдары", forumText:"Материалдар папкасын ашу үшін QR-кодты сканерлеңіз немесе батырманы басыңыз.", forumBtn:"Папканы ашу",
     org:"Цифрлық офис",
     kicker:"Кәсіпкерлерге арналған практикум",
     title:"Сен — CEO.<br><em>Claude</em> — сенің командаң",
